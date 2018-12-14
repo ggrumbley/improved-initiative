@@ -1,5 +1,9 @@
+
 import express = require("express");
 import socketIO = require("socket.io");
+
+require('dotenv').config();
+
 import { Spell } from "../common/Spell";
 import { StatBlock } from "../common/StatBlock";
 import * as DB from "./dbconnection";
