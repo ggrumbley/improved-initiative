@@ -1,74 +1,94 @@
 #playerview {
-    margin: 0;
+  margin: 0;
+  font-size: 20px;
 
-    font-size: 150%;
+  .combatant--header {
+    flex-direction: row;
+    padding: @large-spacer @medium-spacer @large-spacer @larger-spacer;
+  }
 
-    background-image: url('../img/improved-initiative-transparent-darkgreen.png');
-    background-position: center bottom 20px;
-    background-repeat: no-repeat;
+  .combatant__hp {
+    flex-basis: 10%;
+  }
 
-    .combatant--header {
-        flex-direction: row;
+  .combatant__portrait {
+    width: 50px;
+    align-items: center;
+    padding-right: 1vw;
+  }
+
+  .combatant__portrait img {
+    max-height: 50px;
+  }
+
+  .combatant__name {
+    flex-basis: 30%;
+  }
+
+  .combatant__tags {
+    flex-direction: row;
+
+    .tag {
+      .colors(@primary-white, @primary-red);
+      margin-right: @large-spacer;
+      padding: @medium-spacer;
+      text-transform: uppercase;
+      font-size: 0.75rem;
     }
+  }
 
-    .combatant__initiative {
-        width: 5.5vw;
-    }
+  .combatant__header .combatant__tags {
+    text-align: center;
+  }
 
-    .combatant__hp {
-        width: 15vw;
+  .combat-footer {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: @medium-spacer;
+    color: @primary-white;
+    > span {
+      padding-right: @medium-spacer;
     }
+  }
 
-    .combatant__portrait {
-        width: 50px;
-        align-items: center;
-        padding-right: 1vw;
-    }
+  .combatant-portrait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
 
-    .combatant__portrait img {
-        max-height: 50px;
-    }
+  .combatant-portrait__image {
+    width: 80%;
+    height: 80%;
+    max-width: 700px;
+    object-fit: scale-down;
+  }
 
-    .combatant__header .combatant__tags {
-        text-align: center;
-    }
+  .combatant-portrait__caption {
+    max-width: 700px;
+    padding: 10px 0;
+  }
 
-    .combat-footer {
-        flex-direction: row;
-        justify-content: flex-end;
-        margin: @medium-spacer;
-        >span {
-            padding-right: @medium-spacer;
-        }
-    }
+  .damage-suggestion {
+    z-index: 2;
+    position: absolute;
+    top: 10%;
+  }
 
-    .combatant-portrait {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
+  /* Add Animation */
+  .combatant-portrait__image,
+  .combatant-portrait__caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
 
-    .combatant-portrait__image {
-        width: 80%;
-        height: 80%;
-        max-width: 700px;
-        object-fit: scale-down;
+  @keyframes zoom {
+    from {
+      transform: scale(0);
     }
-
-    .combatant-portrait__caption {
-        max-width: 700px;
-        padding: 10px 0;
+    to {
+      transform: scale(1);
     }
-
-    /* Add Animation */
-    .combatant-portrait__image, .combatant-portrait__caption {
-        animation-name: zoom;
-        animation-duration: 0.6s;
-    }
-
-    @keyframes zoom {
-        from {transform:scale(0)}
-        to {transform:scale(1)}
-    }
+  }
 }

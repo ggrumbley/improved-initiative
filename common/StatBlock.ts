@@ -61,11 +61,11 @@ export class StatBlock {
         Name: "",
         Path: "",
         Source: "", Type: "",
-        HP: { Value: 1, Notes: "1d1+0" }, AC: { Value: 10, Notes: "" },
+        HP: { Value: 1, Notes: "(1d1+0)" }, AC: { Value: 10, Notes: "" },
         InitiativeModifier: 0,
         InitiativeAdvantage: false,
         Speed: [],
-        Abilities: { Str: 10, Dex: 10, Con: 10, Cha: 10, Int: 10, Wis: 10 },
+        Abilities: { Str: 10, Dex: 10, Con: 10, Int: 10, Wis: 10, Cha: 10 },
         DamageVulnerabilities: [], DamageResistances: [], DamageImmunities: [], ConditionImmunities: [],
         Saves: [], Skills: [], Senses: [], Languages: [],
         Challenge: "",
@@ -79,5 +79,5 @@ export class StatBlock {
         ImageURL: "",
     })
 
-    public static readonly AbilityNames = ["Str", "Dex", "Con", "Cha", "Int", "Wis"];
+    public static readonly AbilityNames = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
 }

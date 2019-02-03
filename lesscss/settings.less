@@ -1,103 +1,131 @@
 .settings {
-    .overlay-dialog();
-    .absolute-center();
-    max-width: 500px;
-    max-height: 700px;
+  .tab {
+    border-color: @primary-green;
+  }
 
-    .button {
-        margin: @small-spacer;
-    }
+  .repeat-tutorial {
+    .green-button();
+  }
 
-    .tab {
-        border-width: 1px;
-        border-style: solid;
-        padding: @medium-spacer;
-        overflow-y: auto;
-        flex-shrink: 1;
-        p {
-            margin-bottom: @medium-spacer;
-        }
-        img {
-            vertical-align: bottom;
-            margin-right: @medium-spacer;
-        }
-    }
+  .overlay-dialog();
+  margin: @larger-spacer auto;
+  left: 0;
+  right: 0;
+  max-width: 550px;
+  max-height: 90%;
 
-    .about >div {
-        margin: @medium-spacer;
-    }
+  .button,
+  .c-button {
+    margin: @extra-small-spacer;
+  }
 
-    .tips {
-        flex-direction: row;
-        align-items: center;
-        span {
-            padding: @medium-spacer;
-        }
-        .tip {
-            flex-shrink: 1;
-        }
+  .tab-content {
+    border-width: 1px;
+    border-style: solid;
+    padding: @medium-spacer;
+    overflow-y: auto;
+    flex-shrink: 1;
+    p {
+      margin-bottom: @medium-spacer;
     }
-    .whatsnew a {
-        font-weight: bold;
+    img {
+      vertical-align: bottom;
+      margin-right: @medium-spacer;
     }
-    
-    .commands {
-        flex-direction: row;
-        justify-content: flex-end;
-    }
+  }
 
-    .command-options-labels {
-        position: absolute;
-        align-self: flex-end;
-        font-style: italic;
+  .about > div {
+    margin: @medium-spacer;
+  }
+
+  .tips {
+    flex-direction: row;
+    align-items: center;
+
+    span {
+      margin: 0 @medium-spacer;
     }
 
-    .toolbar-label, .toolbar-setting {
-        text-align: center;
-        width: 75px;
-        i {
-            width: 30px;
-        }
+    .tip {
+      flex-shrink: 1;
     }
+  }
+  .whatsnew a {
+    font-weight: bold;
+  }
 
-    .hotkey-label, .keybinding {
-        text-align: center;
-        width: 100px; 
-    }
+  .commands {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 
-    .keybindings >div {
-        flex-direction: row;
-        align-items: center;
-        
-        >span, >label {
-            padding:@small-spacer;
-        }
-    }
+  .command-options-labels {
+    position: absolute;
+    align-self: flex-end;
+    font-style: italic;
+  }
 
-    .command-description {
-        flex-grow:1;
+  .toolbar-label,
+  .toolbar-setting {
+    text-align: center;
+    width: 75px;
+    i {
+      width: 30px;
     }
+  }
 
-    .options p {
-        margin: @medium-spacer;
-    }
+  .hotkey-label,
+  .keybinding {
+    text-align: center;
+    width: 100px;
+  }
 
-    .save-and-close {
-        margin-top: @medium-spacer;
-        align-self: flex-end;
-    }
+  .keybindings > div {
+    flex-direction: row;
+    align-items: center;
 
-    .support {
-        flex-direction: row;
-        align-items: center;
-        > * {
-            margin: @small-spacer;
-        }
+    > span,
+    > label {
+      padding: @extra-small-spacer;
     }
+  }
 
-    .pledge img {
-        height: 30px;
+  .command-description {
+    flex-grow: 1;
+  }
+
+  .options p {
+    margin: @medium-spacer;
+  }
+
+  .save-and-close {
+    margin-top: @medium-spacer;
+    align-self: flex-end;
+  }
+
+  .support {
+    flex-direction: row;
+    align-items: center;
+    > * {
+      margin: @extra-small-spacer;
     }
+  }
+
+  .pledge img {
+    height: 30px;
+  }
+
+  .sync-counts__row {
+    display: flex;
+  }
+
+  .sync-counts__library-name {
+    flex-basis: 5rem;
+  }
+
+  .button--upgrade {
+    .green-button();
+  }
 }
 
 @import "sketch-picker.less";

@@ -1,3 +1,5 @@
+const appVersion = require("./package.json").version;
+
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-ts');
   grunt.loadNpmTasks('grunt-webpack');
@@ -9,29 +11,21 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     ts: {
-      options: {
-        removeComments: false,
-        additionalFlags: '--strictNullChecks'
-      },
       server: {
-        src: ['server/*.ts'],
-        options: {
-          module: 'commonjs',
-          target: 'es5'
-        }
+        tsconfig: "./server/tsconfig.json"
       },
     },
     webpack: {
       options: {
         keepalive: false
       },
-      dev: require('./webpack.config'),
+      dev: require('./webpack.config.dev'),
       prod: require('./webpack.config.prod')
     },
     less: {
       default: {
         files: {
-          "public/css/improved-initiative.css": ["lesscss/improved-initiative.less"]
+          ["public/css/improved-initiative." + appVersion + ".css"]: ["lesscss/improved-initiative.less"]
         }
       }
     },
@@ -39,9 +33,6 @@ module.exports = function (grunt) {
       js_dependencies: {
         src: [
           'node_modules/jquery/dist/jquery.js',
-          'node_modules/mousetrap/mousetrap.js',
-          'node_modules/browser-filesaver/FileSaver.js',
-          'node_modules/markdown-it/dist/markdown-it.js'
         ],
         dest: 'public/js/dependencies.js',
         sourceMap: true
@@ -49,9 +40,6 @@ module.exports = function (grunt) {
       js_dependencies_min: {
         src: [
           'node_modules/jquery/dist/jquery.min.js',
-          'node_modules/mousetrap/mousetrap.min.js',
-          'node_modules/browser-filesaver/FileSaver.min.js',
-          'node_modules/markdown-it/dist/markdown-it.min.js'
         ],
         dest: 'public/js/dependencies.js'
       }
